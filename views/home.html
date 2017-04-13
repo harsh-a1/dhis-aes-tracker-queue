@@ -1,0 +1,30 @@
+
+<div id="leftBar">
+    <d2-left-bar></d2-left-bar>
+
+</div>
+<div id="mainPage">
+    <h2>Apex Lab Queue(size : {{queueEvents.length}})</h2>
+
+    <table class="dhis2-list-table-striped default-form-table ng-scope">
+        <thead>
+        <tr>
+            <th>S No</th>
+            <th>Org Unit</th>
+            <th>Date</th>
+            <th>Sample Type/s</th>
+        </tr>
+        </thead>
+
+        <tbody>
+            <tr ng-class="{'red': ev.clicked, '': !ev.clicked}"
+                ng-click="goToDashboard(ev)" ng-repeat="ev in queueEvents">
+                <td>{{$index+1}}</td>
+                <td>{{ev.orgUnitName}}</td>
+                <td>{{ev.eventDate}}</td>
+                <td>{{ev.typeStr}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
